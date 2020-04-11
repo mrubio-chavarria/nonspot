@@ -2,6 +2,7 @@ FROM python:3.7-alpine
 
 MAINTAINER Mario Rubio
 
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Set working directories
