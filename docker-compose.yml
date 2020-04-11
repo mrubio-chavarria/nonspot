@@ -9,13 +9,28 @@ services:
       POSTGRES_PASSWORD: "789789789D"
     expose:
       - '5432'
+
   web:
     restart: always
     build: .
-    command: python manage.py migrate
+    image: nonspot_web
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - '.:/code'
     ports:
       - "8000:8000"
+    links:
+      - db
+    depends_on:
+      - db
+
+  migration:
+    build: .
+    image: nonspot_web
+    command: python manage.py migrate
+    volumes:
+      - .:/code
+    links:
+      - db
     depends_on:
       - db
