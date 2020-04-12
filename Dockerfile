@@ -36,6 +36,7 @@ RUN \
 RUN apk --update add libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev curl
 RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
 RUN pip3 install Pillow
+RUN pip3 install whitenoise
 RUN python3 -m pip install -r requirements.txt --no-cache-dir
 
 # Expose port
