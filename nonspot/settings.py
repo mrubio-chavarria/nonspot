@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'nonspot.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -87,6 +87,18 @@ DATABASES = {
         'USER': 'nonspot',
         'PASSWORD': '789789789D',
         'HOST': 'db',
+        'PORT':  5432
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nonspot',
+        'USER': 'nonspot',
+        'PASSWORD': '789789789D',
+        'HOST': 'localhost',
         'PORT':  5432
     }
 }

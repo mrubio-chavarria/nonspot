@@ -12,3 +12,4 @@ sqlparse==0.3.1
 typing==3.7.4.1
 urllib3==1.25.8
 gunicorn
+whitenoise

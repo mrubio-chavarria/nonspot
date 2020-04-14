@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home page</h1>
+    <p>Prueba</p>
+    <nav>
+        <ul>
+            <li>
+                <form class='logout-link' action='/users/logout_view/' method='POST'>
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+                <form class='logout-link' action='/users/profile_view/' method='GET'>
+                    {% csrf_token %}
+                    <button type="submit">Profile</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

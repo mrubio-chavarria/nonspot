@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<a>
+    <h1>Profile Information</h1>
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+</a>
+<form class="site-form" action="/users/home_view/" method="GET">
+        {% csrf_token %}
+        <input type="submit" value="Return">
+</form>
+</body>
+</html>
