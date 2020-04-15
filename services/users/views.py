@@ -6,8 +6,9 @@ from rest_framework import viewsets
 from .models import User
 from .serializers import UserSerializer
 from django.shortcuts import render, redirect
-from .forms import UserCreationForm, AuthenticationForm, UserChangeForm
-
+from .forms import UserCreationForm, AuthenticationForm
+from services.evaluations.models import Evaluation
+from ..evaluations.serializers import EvaluationSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -27,6 +28,7 @@ class UserViewSet(viewsets.ModelViewSet):
         DESCRIPTION:
         View to render the home page.
         """
+        print(Evaluation.objects.all().count())
         return render(request, 'home.html')
 
     @action(detail=False, methods=['GET'], permission_classes=(IsAuthenticated,))

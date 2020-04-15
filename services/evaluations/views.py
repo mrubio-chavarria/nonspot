@@ -21,8 +21,7 @@ class EvaluationViewSet(viewsets.ModelViewSet):
         if request.method == 'POST':
             form = EvaluationForm(request.data)
             if form.is_valid():
-                print(self.serializer_class(self.queryset, many=True).data)
-                return redirect('/users/home_view')
+                return redirect('/evaluations/my_analysis_view')
         else:
             form = EvaluationForm()
         return render(request, 'new_analysis.html', {'form': form})
@@ -33,7 +32,6 @@ class EvaluationViewSet(viewsets.ModelViewSet):
         DESCRIPTION:
         View to render my analysis page.
         """
-        if request.method == 'POST':
-            pass
-        return render(request, 'my_analysis.html')
+        evaluations = Evaluation.objects.all()
+        return render(request, 'my_analysis.html', {'evaluations': evaluations})
 
