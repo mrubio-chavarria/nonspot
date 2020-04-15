@@ -10,11 +10,25 @@
     <nav>
         <ul>
             <li>
+                <form class='new-analysis-link' action='/evaluations/new_analysis_view/' method='POST'>
+                    {% csrf_token %}
+                    <button type="submit">New analysis</button>
+                </form>
+            </li>
+            <li>
+                <form class='my-analysis-link' action='/evaluations/my_analysis/' method='POST'>
+                    {% csrf_token %}
+                    <button type="submit">My analysis</button>
+                </form>
+            </li>
+            <li>
                 <form class='logout-link' action='/users/logout_view/' method='POST'>
                     {% csrf_token %}
                     <button type="submit">Log out</button>
                 </form>
-                <form class='logout-link' action='/users/profile_view/' method='GET'>
+            </li>
+            <li>
+                <form class='profile-link' action='/users/profile_view/' method='GET'>
                     {% csrf_token %}
                     <button type="submit">Profile</button>
                 </form>
