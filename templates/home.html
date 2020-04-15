@@ -10,13 +10,13 @@
     <nav>
         <ul>
             <li>
-                <form class='new-analysis-link' action='/evaluations/new_analysis_view/' method='POST'>
+                <form class='new-analysis-link' action='/evaluations/new_analysis_view/' method='GET'>
                     {% csrf_token %}
                     <button type="submit">New analysis</button>
                 </form>
             </li>
             <li>
-                <form class='my-analysis-link' action='/evaluations/my_analysis/' method='POST'>
+                <form class='my-analysis-link' action='/evaluations/my_analysis_view/' method='POST'>
                     {% csrf_token %}
                     <button type="submit">My analysis</button>
                 </form>

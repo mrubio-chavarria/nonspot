@@ -31,11 +31,6 @@ class UserCreationForm(forms.ModelForm):
         help_text=_("Enter the same password as before, for verification."),
     )
 
-    class Meta:
-        model = User
-        fields = ("username", "email")
-        field_classes = {'username': UsernameField}
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self._meta.model.USERNAME_FIELD in self.fields:
@@ -69,6 +64,11 @@ class UserCreationForm(forms.ModelForm):
             user.save()
         return user
 
+    class Meta:
+        model = User
+        fields = ("username", "email")
+        field_classes = {'username': UsernameField}
+
 
 class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField(
@@ -79,11 +79,6 @@ class UserChangeForm(forms.ModelForm):
             "<a href=\"{}\">this form</a>."
         ),
     )
-
-    class Meta:
-        model = User
-        fields = '__all__'
-        field_classes = {'username': UsernameField}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -97,6 +92,12 @@ class UserChangeForm(forms.ModelForm):
         # This is done here, rather than on the field, because the
         # field does not have access to the initial value
         return self.initial["password"]
+
+
+    class Meta:
+        model = User
+        fields = '__all__'
+        field_classes = {'username': UsernameField}
 
 
 class AuthenticationForm(forms.Form):

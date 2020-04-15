@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Nevo análisis</title>
 </head>
 <body>
     <h1>New analysis page</h1>
     <p>New analysis</p>
-
+    <form class='return-link' action='/users/home_view/' method='GET'>
+        {% csrf_token %}
+        <button type="submit">Volver</button>
+    </form>
+    <form class='save-link' action='/evaluations/new_analysis_view/' enctype='multipart/form-data' method='POST'>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Analizar</button>
+    </form>
+    <form class='analyze-link' action='/evaluations/my_analysis_view/' method='POST'>
+        {% csrf_token %}
+        <button type="submit">My analysis</button>
+    </form>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My analysis</title>
+</head>
+<body>
+    <h1>My analysis page</h1>
+    <p>My analysis</p>
+    <form class='upload-link' action='/users/profile_view/' method='GET'>
+        {% csrf_token %}
+        <button type="submit">Profile</button>
+    </form>
+    <form class='save-link' action='/evaluations/new_analysis_view/' method='POST'>
+        {% csrf_token %}
+        <button type="submit">New analysis</button>
+    </form>
+    <form class='analyze-link' action='/evaluations/my_analysis_view/' method='POST'>
+        {% csrf_token %}
+        <button type="submit">My analysis</button>
+    </form>
+    <form class='return-link' action='/users/logout_view/' method='POST'>
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+</body>
+</html>
