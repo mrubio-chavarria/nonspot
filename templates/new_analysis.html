@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nevo análisis</title>
-</head>
-<body>
-    <h1>New analysis page</h1>
-    <p>New analysis</p>
+
+{% extends 'base.html' %}
+
+{% block content %}
     <form class='return-link' action='/users/home_view/' method='GET'>
         {% csrf_token %}
         <button type="submit">Volver</button>
@@ -20,5 +15,4 @@
         {% csrf_token %}
         <button type="submit">My analysis</button>
     </form>
-</body>
-</html>
+{% endblock %}
