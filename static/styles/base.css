@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=ZCOOL+KuaiLe&display=swap');
+
+.content_container {
+    text-align: center;
+}
+
+.page-header {
+    background-color: rgb(242, 242, 242, 0.8);
+    text-color: black;
+}
+
+.table-container{
+}
+
+.button-form {
+    text-align: center;
+}
+
+.col-md-8 {
+    text-align: center;
+}
+
+.page-header {
+    text-align: center;
+}
+
+
+

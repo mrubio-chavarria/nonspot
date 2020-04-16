@@ -2,30 +2,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div align="center" class="'table-container">
         <table class="table mb-0">
-        <thead>
-            <tr>
-                <th>Fecha</th>
-                <th>Nombre</th>
-                <th>Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for evaluation in evaluations %}
-            <tr>
-                <td>{{ evaluation.date }}</td>
-                <td>{{ evaluation.name }}</td>
-                <td>
-                    {% if evaluation.image %}
-                    <img src="{{ evaluation.image.url }}">
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <form class='home-link' action='/users/home_view/' method='GET'>
-        {% csrf_token %}
-        <button type="submit">Volver</button>
-    </form>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evaluation in evaluations %}
+                <tr>
+                    <td>{{ evaluation.date }}</td>
+                    <td>{{ evaluation.name }}</td>
+                    <td>
+                        {% if evaluation.image %}
+                        <img src="{{ evaluation.image.url }}" width="500" height="250">
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form class='home-link' action='/users/home_view/' method='GET'>
+            {% csrf_token %}
+            <button type="submit">Volver</button>
+        </form>
+    </div>
 {% endblock %}

@@ -1,9 +1,56 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=ZCOOL+KuaiLe&display=swap');
+
 h1 a, h2 a {
-     color: #C25100;
-     font-family: 'Lobster';
+     color: black;
+     font-family: 'Catamaran', sans-serif;
+     font-size: 150%;
 }
 
 body {
-    padding-left: 15px;
+     background-color: black;
+     background-image: url("wallpaper.jpg");
+     background-size: auto;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+}
+
+table {
+    width: 50%;
+     height: 100%;
+}
+
+th {
+    text-align: center;
+    background-color: rgb(242, 242, 242, 1);
+    font-family: 'Catamaran', sans-serif;
+    width: 60%;
+
+}
+
+tr {
+    text-align: center;
+    background-color: rgb(242, 242, 242, 0.8);
+    font-family: 'Catamaran', sans-serif;
+    font-size: 150%;
+}
+
+button {
+    background-color: rgb(242, 242, 242, 0.8);
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    font-size: 150%;
+    margin-bottom: 1%;
+}
+
+input {
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+    width: 200px;
+    height: 25x;
+    font-size: 150%;
+    margin-bottom: 1%;
 }

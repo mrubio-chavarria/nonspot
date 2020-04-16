@@ -23,13 +23,16 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     # Methods
-    @action(detail=False, methods=['GET'], permission_classes=(IsAuthenticated,))
+    @action(detail=False, methods=['GET'], permission_classes=(AllowAny,))
     def home_view(self, request):
         """
         DESCRIPTION:
         View to render the home page.
         """
-        return render(request, 'home.html')
+        if request.user.is_authenticated:
+            return render(request, 'home.html')
+        else:
+            return redirect('/users/login_view')
 
     @action(detail=False, methods=['GET'], permission_classes=(IsAuthenticated,))
     def profile_view(self, request):

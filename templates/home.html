@@ -2,20 +2,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <form class='new-analysis-link' action='/evaluations/new_analysis_view/' method='GET'>
+        <form class='button-form' action='/evaluations/new_analysis_view/' method='GET'>
             {% csrf_token %}
-            <button type="submit">New analysis</button>
+            <button type="submit" style="margin: 1%;">Nuevo análisis</button>
         </form>
-        <form class='my-analysis-link' action='/evaluations/my_analysis_view/' method='POST'>
+        <form class='button-form' action='/evaluations/my_analysis_view/' method='POST'>
             {% csrf_token %}
-            <button type="submit">My analysis</button>
+            <button type="submit" style="margin: 1%;">Mis análisis</button>
         </form>
-        <form class='logout-link' action='/users/logout_view/' method='POST'>
+        <form class='button-form' action='/users/profile_view/' method='GET'>
             {% csrf_token %}
-            <button type="submit">Log out</button>
+            <button type="submit" style="margin: 1%;">Perfil</button>
         </form>
-        <form class='profile-link' action='/users/profile_view/' method='GET'>
+        <form class='button-form' action='/users/logout_view/' method='POST'>
             {% csrf_token %}
-            <button type="submit">Profile</button>
+            <button type="submit" style="margin: 1%;">Log out</button>
         </form>
 {% endblock %}
