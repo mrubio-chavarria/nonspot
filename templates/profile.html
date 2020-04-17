@@ -2,13 +2,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a>
+    <div class="profile-title-container">
         <h1>Profile Information</h1>
-        <p>Username: {{user.username}}</p>
-        <p>Email: {{user.email}}</p>
-    </a>
-    <form class="site-form" action="/users/home_view/" method="GET">
+    </div>
+    <div class="profile-text-container">
+        <h2 class="aa">Username</h2>
+        <p class="bb">{{user.username}}</p>
+        <h2 class="cc">Email</h2>
+        <p class="dd">{{user.email}}</p>
+    </div>
+    <div class="profile-button-container">
+        <form class="site-form" action="/users/home_view/" method="GET">
             {% csrf_token %}
             <input type="submit" value="Return">
-    </form>
+        </form>
+    </div>
+
 {% endblock %}

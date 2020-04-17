@@ -2,17 +2,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class='return-link' action='/users/home_view/' method='GET'>
-        {% csrf_token %}
-        <button type="submit">Volver</button>
-    </form>
-    <form class='save-link' action='/evaluations/new_analysis_view/' enctype='multipart/form-data' method='POST'>
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Analizar</button>
-    </form>
     <form class='analyze-link' action='/evaluations/my_analysis_view/' method='POST'>
         {% csrf_token %}
         <button type="submit">My analysis</button>
+    </form>
+    <form class='save-link' action='/evaluations/new_analysis_view/' enctype='multipart/form-data' method='POST'>
+        {% csrf_token %}
+        <div class="special-container">
+            <div class="save-container">
+                {{ form }}
+            </div>
+            <div class="complementary-container">
+                <button type="submit">Analizar</button>
+            </div>
+        </div>
+    </form>
+    <div class="image-label">
+        <h2>¡Importante!</h2>
+        <p>
+            Para el correcto funcionamiento de la aplicación es necesario que todas las imágenes sean de 761x553
+            píxeles. Una imagen de las dimensiones correctas en su monitor se mostrará aproximadamente como la imagen
+            inferior.
+        </p>
+    </div>
+    <div class="image-container">
+        <img src="https://picsum.photos/761/553" width="761" height="553">
+    </div>
+    <form class='return-link' action='/users/home_view/' method='GET'>
+        {% csrf_token %}
+        <button type="submit">Volver</button>
     </form>
 {% endblock %}
