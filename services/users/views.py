@@ -83,4 +83,10 @@ class UserViewSet(viewsets.ModelViewSet):
             form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
+    def landing(request):
+        """
+        DESCRIPTION:
+        View to redirect to the landing page.
+        """
+        return redirect('/users/login_view')
 

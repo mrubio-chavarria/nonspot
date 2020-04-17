@@ -4,7 +4,7 @@
 {% block content %}
     <form class='analyze-link' action='/evaluations/my_analysis_view/' method='POST'>
         {% csrf_token %}
-        <button type="submit">My analysis</button>
+        <button type="submit">Mis análisis</button>
     </form>
     <form class='save-link' action='/evaluations/new_analysis_view/' enctype='multipart/form-data' method='POST'>
         {% csrf_token %}

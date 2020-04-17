@@ -16,17 +16,14 @@ body {
      background-repeat: no-repeat;
 }
 
-table {
-     width: 50%;
-     height: 100%;
+thead {
+    text-align: center;
+    background-color: rgb(242, 242, 242);
+    font-family: 'Catamaran', sans-serif;
 }
 
-th {
-    text-align: center;
-    background-color: rgb(242, 242, 242, 1);
-    font-family: 'Catamaran', sans-serif;
-    width: 60%;
-
+td {
+    float: center;
 }
 
 tr {

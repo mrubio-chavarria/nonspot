@@ -2,9 +2,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <form class="site-form" action="/users/login_view/" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Log in">
-    </form>
+    <div class="landing-container">
+        <div class="land-form">
+            <form class="site-form" action="/users/login_view/" method="POST">
+                {% csrf_token %}
+                <div class="inner-form">{{ form }}</div>
+                <div class="inner-button"><input type="submit" value="Log in"></div>
+            </form>
+        </div>
+        <div class="land-reg">
+            <form class="site-form" action="/users/signup_view/" method="GET">
+                {% csrf_token %}
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+
 {% endblock %}

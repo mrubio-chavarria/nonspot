@@ -9,9 +9,22 @@
     margin-bottom: 1%;
     width: 25%;
     display: inline-block;
-    margin-bottom: 1%;
+    margin-bottom: 1</div>%;
     background-color: rgb(242, 242, 242, 0.8);
 }
+
+.singup-form {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 100%;
+}
+
+.land-form {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+}
+
 
 .aa {
     margin-left: 37.5%;
@@ -119,6 +132,7 @@ label[for=id_image] {
 }
 
 .table-container{
+    display: inline-block;
 }
 
 .button-form {
