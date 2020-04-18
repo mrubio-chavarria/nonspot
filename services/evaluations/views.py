@@ -23,6 +23,7 @@ class EvaluationViewSet(viewsets.ModelViewSet):
             if form.is_valid():
                 exam = form.save()
                 exam.user = request.user
+                exam.image = form.data.get('image')
                 exam.save()
                 return redirect('/evaluations/my_analysis_view')
         else:
@@ -36,5 +37,6 @@ class EvaluationViewSet(viewsets.ModelViewSet):
         View to render my analysis page.
         """
         evaluations = Evaluation.objects.filter(user=request.user)
+        print(EvaluationSerializer(evaluations, many=True).data)
         return render(request, 'my_analysis.html', {'evaluations': evaluations})
 
