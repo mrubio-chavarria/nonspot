@@ -14,4 +14,6 @@ urllib3==1.25.8
 gunicorn
 whitenoise
 numpy
+tensorflow
 setuptools
+psycopg2-binary
