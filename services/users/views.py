@@ -23,7 +23,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     # Methods
-    @action(detail=False, methods=['GET'], permission_classes=(AllowAny,))
+    @action(detail=False, methods=['GET'], permission_classes=(IsAuthenticated,))
     def home_view(self, request):
         """
         DESCRIPTION:
@@ -83,10 +83,15 @@ class UserViewSet(viewsets.ModelViewSet):
             form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
-    def landing(request):
-        """
-        DESCRIPTION:
-        View to redirect to the landing page.
-        """
+
+@action(detail=False, methods=['GET', 'POST'], permission_classes=(AllowAny,))
+def landing(request):
+    """
+    DESCRIPTION:
+    View to redirect to the landing page.
+    """
+    if request.user.is_authenticated:
+        return redirect('/users/home_view')
+    else:
         return redirect('/users/login_view')
 
