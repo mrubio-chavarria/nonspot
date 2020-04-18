@@ -9,6 +9,7 @@
                     <th>Fecha</th>
                     <th>Nombre</th>
                     <th>Imagen</th>
+                    <th>Resultados</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,24 @@
                         {% else %}
                         <p>Archivo no encontrado</p>
                         {% endif %}
+                    </td>
+                    <td>
+                        <div class="r-container-1">
+                            <table class="results-table">
+                                <thead>
+                                    <th class = "rrow">Lunar normal</th>
+                                    <th class = "rrow">Lunar anormal</th>
+                                    <th class = "rrow">Melanoma</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class = "rrow">{{ evaluation.results.LN }}</td>
+                                        <td class = "rrow">{{ evaluation.results.LA }}</td>
+                                        <td class = "rrow">{{ evaluation.results.ML }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}

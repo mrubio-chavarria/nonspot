@@ -85,6 +85,32 @@
     background-color: rgb(242, 242, 242, 0.6);
 }
 
+.header-row th {
+    text-align: center;
+}
+
+.results-table {
+    border-collapse: separate;
+    border-spacing: 50px 0;
+}
+
+.row-container-rr {
+    display: inline-block;
+    margin-bottom: 5%;
+}
+
+.rrow {
+    padding: 10px 0;
+}
+
+.r-container-1 {
+    margin-top: 11.5%;
+    margin-left: 15.5%;
+    display: grid;
+    grid-template-rows: 49.5% 49.5% 1%;
+    grid-template-columns: 33% 33% 33%;
+}
+
 .save-container {
     grid-row-start: 1;
     grid-row-end: 2;

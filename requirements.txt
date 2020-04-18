@@ -13,3 +13,6 @@ typing==3.7.4.1
 urllib3==1.25.8
 gunicorn
 whitenoise
+numpy
+tensorflow==2.1.0
+setuptools

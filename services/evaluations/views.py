@@ -5,6 +5,8 @@ from rest_framework import viewsets
 from .models import Evaluation
 from .serializers import EvaluationSerializer
 from .forms import EvaluationForm
+from classifier.classify import classify
+from PIL import Image
 
 
 class EvaluationViewSet(viewsets.ModelViewSet):
@@ -24,6 +26,8 @@ class EvaluationViewSet(viewsets.ModelViewSet):
                 exam = form.save()
                 exam.user = request.user
                 exam.image = form.data.get('image')
+                im = Image.open('.' + exam.image.url)
+                exam.results = classify(im)
                 exam.save()
                 return redirect('/evaluations/my_analysis_view')
         else:
