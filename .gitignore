@@ -131,3 +131,4 @@ dmypy.json
 media/
 /static/rest_framework/
 /static/admin/
+static/

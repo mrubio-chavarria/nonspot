@@ -21,6 +21,9 @@ class EvaluationViewSet(viewsets.ModelViewSet):
         if request.method == 'POST':
             form = EvaluationForm(request.data)
             if form.is_valid():
+                exam = form.save()
+                exam.user = request.user
+                exam.save()
                 return redirect('/evaluations/my_analysis_view')
         else:
             form = EvaluationForm()
@@ -32,6 +35,6 @@ class EvaluationViewSet(viewsets.ModelViewSet):
         DESCRIPTION:
         View to render my analysis page.
         """
-        evaluations = Evaluation.objects.all()
+        evaluations = Evaluation.objects.filter(user=request.user)
         return render(request, 'my_analysis.html', {'evaluations': evaluations})
 
